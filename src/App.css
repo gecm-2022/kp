@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+  .removeLinkHover {
+    @apply hover:after:w-[0] text-[#808080];
+  }
+  .contactinput {
+    @apply bg-gray-800 px-4 w-[390px] py-1 rounded-lg;
+  }
+  .contactResponsive{
+    @apply contactinput w-[310px] ;
+
+  }
+  .tbd{
+    @apply border py-4 text-center ;
+
+  }
+ .outlineinput{
+  @apply focus:outline-none  focus:border-blue-500 border-2 bg-gray-800  rounded-b-md;
+ }
+ .que{
+  @apply list-none text-white border p-2 rounded hover:bg-slate-600 w-[200px] mx-6; 
+ }
+ 
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  
+  background-color: #333;
+  border-radius: 6px;
+  border: 1px solid #555;
+}
+
+
+body {
+  /* background: #19191add; */
+  background: #0a131def;
+  color: white;
+}
+
+#menu-drop-down {
+  
+  transition:  all 0.3 linear;
+}
+#demo li:hover > #menu-drop-down{
+  visibility: visible;
+  /* opacity: 1; */
+}
+
+
+
+
+
+
+
+nav ul li {
+  list-style: none;
+  margin: 0 5px;
+}
+
+a {
+  padding: 0 5px;
+  position: relative;
+  color: #959393bd;
+}
+a::after {
+  content: "";
+  position: absolute;
+  border-radius: 55px;
+  /* background-color: #73a6e1; */
+  background-color: #3f5e8199;
+  height: 3px;
+  width: 0;
+  left: 0px;
+  bottom: 2px;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: rgb(255, 253, 253);
+  /* font-size: 15.6px; */
+}
+
+a:hover::after {
+  width: 100%;
+}
+#paintingForm input ,textarea {
+  width: 350px;
+  padding: 8px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+#card {
+  width: 300px;
+  height: 400px;
+  background: #c1c1c1;
+  /* border-radius: 25px; */
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.552), inset -20px -20px 60px #fff;
+  padding: 30px;
+}
+
+#card img {
+  margin: 5px 0;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 25px;
+}
+#card h2 {
+  margin: 0;
+}
+
+
+
+
+/* phone style */
+@media (max-width: 900px) {
+  .bd {
+  
+    width: 340px;
+    padding: 8px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  #paintingForm input ,textarea {
+    width: 330px;
+  }
+  /* #navElement {
+    display: none;
+  } */
+  /* .humbar {
+    width: 290px;
+  } */
+  /* .humbar ul li {
+    width: 205px;
+    margin: 15px;
+    padding: 15px;
+  } */
+  /* .humbar ul li:hover {
+    background: black;
+    color: white;
+  } */
+}
+
