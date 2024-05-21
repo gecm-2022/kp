@@ -130,7 +130,7 @@ const Navbar = () => {
               Home
             </li>
           </NavLink>
-          <NavLink
+          {/* <NavLink
             onClick={handletoggleclick}
             className={(e) => {
               return e.isActive
@@ -142,7 +142,7 @@ const Navbar = () => {
             <li className=" bd py-5 w-full  text-[17px] md:border-0 md:hover:bg-transparent hover:bg-[#3f5e8199] border">
             Study_X
             </li>
-          </NavLink>
+          </NavLink> */}
           
 
           {/* service ....................... */}
