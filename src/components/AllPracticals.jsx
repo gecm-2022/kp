@@ -13,7 +13,10 @@ const AllPracticals = () => {
 
   useEffect(() => {
     let n = 1;
-    d(1);
+    setloading(true);
+    d(n).finally(() => {
+      setloading(false);
+    });
   }, []);
 
   const handlePracticals = (n) => {
@@ -53,13 +56,13 @@ const AllPracticals = () => {
     });
   }, []);
   const practical_number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  const [activeItem, setActiveItem] = useState(null);
+  const [activeItem, setActiveItem] = useState(1);
 
   return (
-    <div className="mt-1 justify-center content-center sticky ">
-      <div className="text-center ">
+    <div className="mt-1 justify-center content-center sticky">
+      <div className="text-center my-1">
         <div className="  ">
-          <ul className="  md:h-fit h-[75px] overflow-y-auto  text-[13px] md:text-[16px] w-[100vw]  flex   bg-gray-900  rounded-md    ">
+          <ul className="  md:h-fit h-[85px] overflow-y-auto  text-[13px] md:text-[16px] w-[100vw]  flex   bg-gray-900  rounded-md    ">
             {practical_number.map((num) => {
               return (
                 <li key={num} className="  md:mx-6 mx-2  ">
@@ -88,11 +91,14 @@ const AllPracticals = () => {
         <div className=" flex justify-center  ">
           <div className=" w-[500px]  justify-center   hidden md:flex my-4 ">
             <div className="m-auto">
-              {}
-              <a className=" " href="#item-1">
-                <li className="que ">Que-1</li>
-              </a>
-              <a className="  my-1" href="#item-2">
+              {pdata.map((e, i) => {
+                return (
+                  <a className=" " href={`#item-${i + 1}`}>
+                    <li className="que ">Que-{i + 1}</li>
+                  </a>
+                );
+              })}
+              {/* <a className="  my-1" href="#item-2">
                 <li className="que">Que-2</li>
               </a>
               <a className=" my-1" href="#item-3">
@@ -112,7 +118,7 @@ const AllPracticals = () => {
               </a>
               <a className="  my-1" href="#item-8">
                 <li className="que ">Que-8</li>
-              </a>
+              </a> */}
             </div>
           </div>
 
