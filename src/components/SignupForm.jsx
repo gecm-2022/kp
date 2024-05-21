@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { useAuth } from "../context/contextapi";
 
 const SignupForm = () => {
-  const {storeToken,url} = useAuth();
+  const { storeToken, url } = useAuth();
   const navigate = useNavigate();
   const {
     register,
@@ -77,6 +77,10 @@ const SignupForm = () => {
                 name="email"
                 {...register("email", {
                   required: { value: true, message: "email id is require!" },
+                  pattern: {
+                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                    message: "Enter a valid email address.",
+                  },
                 })}
               />
               {errors.email && (
