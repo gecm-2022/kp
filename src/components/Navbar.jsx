@@ -299,7 +299,7 @@ const Navbar = () => {
           </NavLink>
         </div>
         {/* login , sign up  and logout buttons......................*/}
-        <div className=" btn mx-[65px] humbar -left-full md:left-0 gap-2 md:mx-5 md:block md:relative md:top-0 absolute top-[680px]     ">
+        <div className=" btn mx-[65px] humbar -left-[120%] md:left-0 gap-2 md:mx-5 md:block md:relative md:top-0 absolute top-[600px]     ">
           {islogin ? (
             // logout button............
             <NavLink
