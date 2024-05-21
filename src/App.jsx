@@ -35,7 +35,9 @@ function App() {
       <Navbar />
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Study />} />
+
           <Route path="/adminpanel" element={<AdminPanel />} />
           <Route path="/addpractical" element={<AddPractical />} />
           <Route path="/contact" element={<Contact />} />
