@@ -5,7 +5,9 @@ export const Authcontext = createContext();
 
 export const MycontextProvider = ({ children }) => {
   // const url = "http://localhost:3000";
-  const url = "https://kb-kc44.onrender.com";
+  // const url = "http://192.168.89.205:3000"
+  const url = "http://13.234.29.249:3000"
+  // const url = "https://kb-kc44.onrender.com";
   const [token, settoken] = useState(localStorage.getItem("token"));
   const [user, setuser] = useState("");
   const [fetchUser, setfetchUser] = useState([""]);
@@ -23,6 +25,16 @@ export const MycontextProvider = ({ children }) => {
 
     return localStorage.removeItem("token");
   };
+  const userAdmin = async () => {
+    if (islogin) {
+      const power = user.isadmin == true;
+      console.log(power);
+    }
+  };
+  useEffect(() => {
+    userAdmin()
+  }, [token]);
+  
 
   const userdata = async () => {
     const response = await fetch(`${url}/auth/api/getuser`, {
@@ -35,8 +47,8 @@ export const MycontextProvider = ({ children }) => {
     });
     if (response.ok) {
       const r = await response.json();
-      setuser(r);
       // console.log(r)
+      setuser(r);
     }
   };
   useEffect(() => {
@@ -48,7 +60,7 @@ export const MycontextProvider = ({ children }) => {
     };
   }, [token]);
 
-  // add notes
+  // add notes.................
   const addnotes = async (data) => {
     // console.log(`add notes is`,data)
     const response = await fetch(`${url}/user/api/addnote`, {
@@ -72,7 +84,6 @@ export const MycontextProvider = ({ children }) => {
 
   // fetch all notes..............
   const [notesdata, setnotesdata] = useState([""]);
-
   const fetchnote = async () => {
     if (islogin) {
       const r = await fetch(`${url}/user/api/fetchnote`, {
@@ -117,6 +128,22 @@ export const MycontextProvider = ({ children }) => {
       toast(r.message);
     }
   };
+  // deleteUser...................
+  const deleteUser = async (id) => {
+    const r = await fetch(`${url}/adminpanel/api/du/${id}`, {
+      method: "Delete",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": token,
+      },
+    });
+    const res = await r.json();
+    console.log(res);
+    if (r.ok) {
+      toast(res.message);
+      userAdminpanel();
+    }
+  };
   // ContactAdminPanel
   const contscAdminpanel = async () => {
     const r = await fetch(`${url}/adminpanel/api/contactpanel/`, {
@@ -132,6 +159,22 @@ export const MycontextProvider = ({ children }) => {
       setfetchContact(re);
     } else {
       toast(r.message);
+    }
+  };
+  // deleteContact...................
+  const deleteContact = async (id) => {
+    const r = await fetch(`${url}/adminpanel/api/cu/${id}`, {
+      method: "Delete",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": token,
+      },
+    });
+    const res = await r.json();
+    // console.log(res);
+    if (r.ok) {
+      toast(res.message);
+      contscAdminpanel();
     }
   };
   // addpracticals................
@@ -223,6 +266,8 @@ export const MycontextProvider = ({ children }) => {
       toast(res.error || "Failed to edit todo");
     }
   };
+
+  // fetch practicals.............
   const [pdata, setpdata] = useState([""]);
 
   const d = async (n) => {
@@ -255,14 +300,17 @@ export const MycontextProvider = ({ children }) => {
         islogin,
         Logout,
         user,
+        userAdmin,
         token,
         fetchnote,
         notesdata,
         addnotes,
         editNotes,
         userAdminpanel,
+        deleteUser,
         fetchUser,
         contscAdminpanel,
+        deleteContact,
         fetchContact,
         addTodo,
         fetchtodos,

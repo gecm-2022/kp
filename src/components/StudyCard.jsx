@@ -8,7 +8,7 @@ const Cards = ({ data }) => {
         {data.map((e) => {
           return (
             <div key={e.id} className="my-3 ">
-              <div className=" border  p-5 rounded-lg md:h-[32vh] md:w-[20vw] h-fit w-fit">
+              <div className=" border  p-5 rounded-lg md:h-full md:w-[300px] lg:h-full sm-h-full sm-w-full h-fit w-fit">
                 <h5 className="text-2xl my-2">{e.title}</h5>
                 <p className="text-sm text-gray-200/90">{e.dsc}</p>
                 <NavLink to={e.url} className=" my-2 removeLinkHover">

@@ -126,7 +126,7 @@ const Navbar = () => {
             }}
             to="/"
           >
-            <li className=" bd py-5 w-full  text-[17px] md:border-0 md:hover:bg-transparent hover:bg-[#3f5e8199] border">
+            <li className=" bd py-5 md:w-full  text-[17px] md:border-0 md:hover:bg-transparent hover:bg-[#3f5e8199] border">
               Home
             </li>
           </NavLink>
@@ -156,7 +156,7 @@ const Navbar = () => {
             className={"removeLinkHover relative  "}
             to="#"
           >
-            <li className="bd md:py-3 my-2 w-full  md:border-0    border relative  ">
+            <li className="bd md:py-3 my-2 md:w-full  md:border-0    border relative  ">
               <div className="flex items-center justify-center">
                 Services
                 <FaAngleDown />
@@ -265,7 +265,7 @@ const Navbar = () => {
             }}
             to="/Project"
           >
-            <li className="bd py-5 w-full  md:border-0 md:hover:bg-transparent hover:bg-[#3f5e8199] border">
+            <li className="bd py-5 md:w-full  md:border-0 md:hover:bg-transparent hover:bg-[#3f5e8199] border">
               Projects
             </li>
           </NavLink>
@@ -293,13 +293,13 @@ const Navbar = () => {
             }}
             to="/contact"
           >
-            <li className="bd  py-5 w-full text-[17px]  md:border-0 md:hover:bg-transparent hover:bg-[#3f5e8199] border">
+            <li className="bd  py-5 md:w-full  text-[17px]  md:border-0 md:hover:bg-transparent hover:bg-[#3f5e8199] border">
               Contact us
             </li>
           </NavLink>
         </div>
         {/* login , sign up  and logout buttons......................*/}
-        <div className=" btn mx-[65px] humbar -left-[120%] md:left-0 gap-2 md:mx-5 md:block md:relative md:top-0 absolute top-[600px]     ">
+        <div className=" btn mx-[65px] humbar -left-[120%] md:left-0 gap-2 md:mx-5 md:block md:relative md:top-0 absolute top-[690px]      ">
           {islogin ? (
             // logout button............
             <NavLink
