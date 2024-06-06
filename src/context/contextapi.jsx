@@ -7,7 +7,7 @@ export const MycontextProvider = ({ children }) => {
   // const url = "http://localhost:3000";
   // const url = "http://192.168.89.205:3000"
   // const url = "http://52.66.245.148:3000"
-    const url = "http://13.127.30.249:5001"
+    const url = "http://35.154.84.139:5001"
 
   // const url = "https://kb-kc44.onrender.com";
   const [token, settoken] = useState(localStorage.getItem("token"));
