@@ -4,12 +4,9 @@ import { toast } from "react-toastify";
 export const Authcontext = createContext();
 
 export const MycontextProvider = ({ children }) => {
-  // const url = "http://localhost:3000";
-  // const url = "http://192.168.89.205:3000"
-  // const url = "http://52.66.245.148:3000"
-    // const url = "https://35.154.84.139:5001"
 
   const url = "https://kb-kc44.onrender.com";
+
   const [token, settoken] = useState(localStorage.getItem("token"));
   const [user, setuser] = useState("");
   const [fetchUser, setfetchUser] = useState([""]);
@@ -34,9 +31,8 @@ export const MycontextProvider = ({ children }) => {
     }
   };
   useEffect(() => {
-    userAdmin()
+    userAdmin();
   }, [token]);
-  
 
   const userdata = async () => {
     const response = await fetch(`${url}/auth/api/getuser`, {
@@ -86,6 +82,7 @@ export const MycontextProvider = ({ children }) => {
 
   // fetch all notes..............
   const [notesdata, setnotesdata] = useState([""]);
+  const reversedData = [...notesdata].reverse();
   const fetchnote = async () => {
     if (islogin) {
       const r = await fetch(`${url}/user/api/fetchnote`, {
@@ -200,8 +197,9 @@ export const MycontextProvider = ({ children }) => {
   // todos crud oprations......................
 
   // fetch todos......
-  const [todosapi, settodosapi] = useState([" "]);
-
+  const [todosdata, settodosdata] = useState([" "]);
+  // const [todosapi, settodosapi] = useState([" "]);
+  const todosapi = [...todosdata].reverse();
   const fetchtodos = async () => {
     const r = await fetch(`${url}/tmko/fetchtodo`, {
       method: "GET",
@@ -212,7 +210,7 @@ export const MycontextProvider = ({ children }) => {
     });
     const res = await r.json();
     // console.log(res);
-    settodosapi(res);
+    settodosdata(res);
   };
 
   // add  todos....
@@ -306,6 +304,7 @@ export const MycontextProvider = ({ children }) => {
         token,
         fetchnote,
         notesdata,
+        reversedData,
         addnotes,
         editNotes,
         userAdminpanel,

@@ -15,6 +15,7 @@ import Signup from "./pages/Signup";
 import Logout from "./pages/Logout";
 import Contact from "./pages/Contact";
 import Project from "./pages/Project";
+// import Documentry from "./pages/Documentry";
 const Note = lazy(() => import("./pages/Note"));
 const About = lazy(() => import("./pages/About"));
 const AdminPanel = lazy(() => import("./pages/AdminPanel"));
@@ -23,6 +24,7 @@ const TodoList = lazy(() => import("./pages/TodoList"));
 const AddPractical = lazy(() => import("./pages/AddPractical"));
 const Study = lazy(() => import("./pages/Study"));
 const AllPracticals = lazy(() => import("./components/AllPracticals"));
+const Documentry = lazy(() => import("./pages/Documentry"));
 // import AllPracticals from "./components/AllPracticals";
 
 function App() {
@@ -51,6 +53,7 @@ function App() {
           <Route path="/passwordapp" element={<PasswordManager />} />
           <Route path="/study" element={<Study />} />
           <Route path="/javaPracticals" element={<AllPracticals />} />
+          <Route path="/documentry" element={<Documentry />} />
           {/* <Route path="/practical_1" element={<Practical />} /> */}
         </Routes>
       </Suspense>
