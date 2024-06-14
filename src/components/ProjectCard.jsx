@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 const Cards = ({ data }) => {
   const { islogin } = useAuth();
   if (islogin == false) {
-    toast("Please Login First.....")
+    toast.error("Please Login First.....")
   }
 
   return (

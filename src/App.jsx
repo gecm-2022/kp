@@ -40,14 +40,14 @@ function App() {
           {/* <Route path="/" element={<Home />} /> */}
           <Route path="/" element={<Study />} />
 
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/adminpanel" element={<AdminPanel />} />
           <Route path="/addpractical" element={<AddPractical />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
           <Route path="/project" element={<Project />} />
-          <Route path="/logout" element={<Logout />} />
           <Route path="/note" element={<Note />} />
           <Route path="/todolist" element={<TodoList />} />
           <Route path="/passwordapp" element={<PasswordManager />} />
