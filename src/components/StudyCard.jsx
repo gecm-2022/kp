@@ -7,7 +7,7 @@ const Cards = ({ data }) => {
       <div className=" flex justify-center content-center gap-5 mx-10 flex-wrap">
         {data.map((e) => {
           return (
-            <div key={e.id} className="my-3 ">
+            <div key={e.id} className="my-1 ">
               {!e.done && (
                 <div className=" md:absolute relative   text-red-600 text-center flex justify-center top-[180px] md:py-2 py-8 -rotate-60   text-2xl md:text-2xl md:top-[195px]  select-none md:-rotate-45 font-mono backdrop-blur-sm  rounded opacity-1 -z-0  ">
                   UNDER CONSTRUCTION..✨
