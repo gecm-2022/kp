@@ -9,7 +9,7 @@ const Cards = ({ data }) => {
           return (
             <div key={e.id} className="my-3 ">
               {!e.done && (
-                <div className=" md:absolute relative   text-red-600 text-center flex justify-center top-[180px] md:py-2 py-10 -rotate-60   text-2xl md:text-2xl md:top-[195px]  select-none md:-rotate-45 font-mono backdrop-blur-sm  rounded opacity-1 -z-0  ">
+                <div className=" md:absolute relative   text-red-600 text-center flex justify-center top-[180px] md:py-2 py-8 -rotate-60   text-2xl md:text-2xl md:top-[195px]  select-none md:-rotate-45 font-mono backdrop-blur-sm  rounded opacity-1 -z-0  ">
                   UNDER CONSTRUCTION..✨
                 </div>
               )}
