@@ -34,7 +34,7 @@ const Cards = ({ data }) => {
                       alt="Service Image"
                       className="rounded-xl  h-[250px] my-5 mx-5 object-cover object-center"
                     />
-                    <div className=" p-4">
+                    <div className=" p-1">
                       <h2 className="text-xl font-semibold mb-4 text-gray-800 ">
                         {e.title}
                       </h2>

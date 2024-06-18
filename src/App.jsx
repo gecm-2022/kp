@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
+
 import "./App.css";
 import "./index";
 import Navbar from "./components/Navbar";
@@ -38,7 +39,7 @@ function App() {
       <Suspense fallback={<Loader />}>
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Study />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

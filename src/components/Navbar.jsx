@@ -112,7 +112,7 @@ const Navbar = () => {
       <nav
         className={`flex justify-between  select-none ${
           isSticky ? "sticky top-0 bg-gray-800 z-10" : ""
-        } bg-[#0a131d]   lg:h-[10vh] md:h-[9vh] my-auto items-center shadow-lg shadow-[#191a26a7]  `}
+        } bg-[#0a131d]   lg:h-[10vh] md:h-[10vh] my-auto items-center shadow-lg shadow-[#191a26a7]  `}
       >
         <div className="logo text-center mx-2 ">
           <NavLink className="removeLinkHover " to="/">
@@ -158,13 +158,14 @@ const Navbar = () => {
                                     Service...................... 
          **********************************************************************/}
           <div
+          
             onClick={handleDropDown}
             onMouseEnter={() => {
               handleDropDown();
             }}
             onMouseLeave={hdp}
             value="service"
-            className={"cursor-pointer relative  "}
+            className={"cursor-pointer relative  text-[#959393bd] hover:text-white "}
           >
             <li className="bd md:py-3 my-2 md:w-full  md:border-0    border relative  ">
               <div className="flex items-center justify-center">
@@ -200,7 +201,7 @@ const Navbar = () => {
               )}
               {!islogin && (
                 <ul
-                  className="md:bg-slate-800 md:absolute top-[9vh] md:w-[15rem] md:translate-x-[-30%] hidden opacity-1  rounded-xl z-0"
+                  className="md:bg-slate-800 md:absolute top-[9vh] md:w-[15rem] md:translate-x-[-30%] hidden opacity-1  rounded-xl z-10"
                   id="menu-drop-down"
                 >
                   <h2 className="text-wrap my-5 text-red-700">
